@@ -1,0 +1,8 @@
+/node_modules
+/.next
+/public
+*.json
+*.lock
+*.css
+*.scss
+next.config.js
