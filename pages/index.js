@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
+// import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
+import { GET_TEST_INFO } from '../http/api';
+import Test from '../components/Test';
 
-function Home(props) {
+export default function Home({ data }) {
 
-    useEffect(() => {
-        console.log(props);
-    }, []);
+    console.log('%c data 👉 ', 'font-size:16px;background-color:#fff;color:#000;', data);
 
     return (
         <>
@@ -17,8 +18,19 @@ function Home(props) {
             </Head>
             <img src="/images/nextjs-logo.png" className={styles.img} />
             <p className="test">首页</p>
+            <Test />
         </>
     );
 }
 
-export default Home;
+export async function getServerSideProps() {
+    const data = await GET_TEST_INFO();
+    if (!data) {
+        notFound: true
+    }
+    return {
+        props: {
+            data: data
+        }
+    }
+}
