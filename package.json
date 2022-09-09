@@ -2,13 +2,14 @@
   "scripts": {
     "dev": "NEXT_PUBLIC_DOMAIN_ENV=development next dev",
     "build": "NEXT_PUBLIC_DOMAIN_ENV=production next build",
-    "test":"NEXT_PUBLIC_DOMAIN_ENV=test next build",
+    "test": "NEXT_PUBLIC_DOMAIN_ENV=test next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "antd": "^4.23.0",
     "axios": "^0.27.2",
+    "loadsh": "^0.0.4",
     "next": "^12.2.5",
     "node-fetch": "^3.2.10",
     "react": "^18.2.0",

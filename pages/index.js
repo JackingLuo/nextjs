@@ -3,7 +3,7 @@ import Head from 'next/head';
 // import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 import { GET_TEST_INFO } from '../http/api';
-import Test from '../components/Test';
+import CommonLayout from '../components/Layout';
 
 export default function Home({ data }) {
 
@@ -18,7 +18,6 @@ export default function Home({ data }) {
             </Head>
             <img src="/images/nextjs-logo.png" className={styles.img} />
             <p className="test">首页</p>
-            <Test />
         </>
     );
 }
@@ -33,4 +32,12 @@ export async function getServerSideProps() {
             data: data
         }
     }
+}
+
+Home.getLayout = (page) => {
+    return (
+        <CommonLayout>
+            {page}
+        </CommonLayout>
+    )
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'antd';
+import CommonLayout from '../../components/Layout';
 
-const ComponentsName = () => {
+const Doc = () => {
 
     return (
         <>
@@ -12,4 +13,12 @@ const ComponentsName = () => {
 
 };
 
-export default ComponentsName;
+export default Doc;
+
+Doc.getLayout = (page) => {
+    return (
+        <CommonLayout>
+            {page}
+        </CommonLayout>
+    )
+}
